@@ -17,5 +17,6 @@ Het belangrijkste is om te bepalen welk biome er op welke positie moet komen en 
 - Minecraft biome IDs - https://minecraft.fandom.com/wiki/Biome/ID 
 
 ## Commands om uit te voeren
-cd C:\Users\...\RiderProjects\RealWorldBiomeMapCreator\RealWorldBiomeMapCreator
-dotnet add package SixLabors.ImageSharp --version 3.1.5
+- cd C:\Users\...\RiderProjects\RealWorldBiomeMapCreator\RealWorldBiomeMapCreator
+- dotnet add package SixLabors.ImageSharp --version 3.1.5
+- pip install requests
