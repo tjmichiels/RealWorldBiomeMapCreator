@@ -4,7 +4,7 @@ namespace RealWorldBiomeMapCreator.Biomes;
 
 public static class BiomeMapper
 {
-    // @TODO implementeer dit
+    // @TODO: implementeer dit
     public static Biome DetermineBiome(Rgba32 color)
     {
         // Voorbeeldlogica om kleuren aan biomes te koppelen
