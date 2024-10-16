@@ -40,7 +40,7 @@ public class SatelliteTile : ITile
         }
     }
 
-    // @TODO Implementeer dit, dit hoort geen void te zijn
+    // @TODO Implementeer dit. Dit hoort geen void te zijn
     public void GetTileData()
     {
         throw new NotImplementedException();

@@ -9,25 +9,27 @@ public class Program
         TileDownloader tileDownloader = new TileDownloader();
 
         /*
-         Hieronder zien jullie een voorbeelduitwerking, van het downloaden en analyseren van 1 tile,
-         zoals jullie misschien al kunnen zien is dit nog niet af, daarnaast wordt de verkeerde tile gebruikt.
-         Plaatsnamen zijn namelijk zwarte letters en daarmee is geen Biome te maken.
-         Combineer minimaal 3 tiles met elkaar en bepaal welke Biome erbij hoort, er zijn veel Biomes (zie de Biome enum), dus denk goed na hoe je dit aanpakt!
-
-         Bonus: Als je toch bezig bent met het kijken naar kaarten, bedenk welke hoogte daarbij hoort en sla deze samen met Biome op in de SurfaceSafer.
-
-         Het beste resultaat wint een prijs en wordt daarnaast daadwerkelijk gebruikt als basis voor een Minecraft World Generator
-         die we lanceren op de Game Night.
-
-         BELANGRIJK! Download niet teveel tiles achter elkaar, mogelijk wordt je dan geblokkeerd dus ga hier zuinig mee om!
-         Cache dus de tiles door ze op te slaan naar een bestand en steeds te controleren of het bestand al bestaat!
-         */
-
-        // Download de tile, probeer ook andere delen van de wereld uit voor de andere biomes.
-
-        // Zoom werkt zo: Zoom 0 betekent, wereld is opgedeeld in 1x1 tile, zoom 1 betekent wereld is opgedeeld in 2x2 tiles, zoom 2 betekent wereld is opgedeeld in 4x4 tiles, zoom 3 betekent wereld is opgedeeld in 8x8 tiles.
-        // Dus zoom 7 zoals default hieronder betekent dat de wereld is opgedeeld in 128x128 stukken (tiles) (we tellen altijd vanaf 0 dus 0 t/m 127)
-        // Deze coordinaten zijn een deel van Nederland, het eindresultaat zal het liefste met zoom 9 moeten werken.
+           Hieronder zie je een voorbeeld van het downloaden en analyseren van één tile.
+           Let op: deze uitwerking is nog niet compleet, en de gebruikte tile is niet correct.
+           Plaatsnamen (zwarte letters) worden namelijk gedetecteerd, maar die kunnen niet gebruikt worden om een biome te bepalen.
+        
+           Je opdracht is om minimaal 3 tiles met elkaar te combineren om te bepalen welke biome het beste past bij dat gebied.
+           Er zijn veel verschillende biomes (zie de Biome enum), dus denk goed na over de logica waarmee je deze kiest!
+        
+           Bonus: Als je toch bezig bent met het analyseren van kaarten, bedenk ook welke hoogte bij elke locatie hoort en sla zowel de biome als de hoogte op in de SurfaceSafer.
+        
+           Het beste resultaat wint een prijs én wordt gebruikt als basis voor een Minecraft World Generator die we lanceren tijdens de Game Night.
+        
+           BELANGRIJK: Download niet te veel tiles achter elkaar, anders loop je het risico om geblokkeerd te worden.
+           Sla gedownloade tiles lokaal op (cache ze) en controleer altijd of ze al bestaan voordat je ze opnieuw downloadt!
+        */
+        
+          // Download een tile. Probeer ook andere locaties uit de wereld om verschillende biomes te verkennen.
+        
+          // Zoom uitleg: Zoom 0 betekent dat de wereld is opgedeeld in 1x1 tile. Zoom 1 deelt de wereld op in 2x2 tiles, zoom 2 in 4x4 tiles, en zo verder.
+          // Bij zoom 7 (de huidige instelling) is de wereld opgedeeld in 128x128 tiles. (We tellen vanaf 0, dus van 0 t/m 127).
+          // De huidige coördinaten komen uit een deel van Nederland, maar voor het eindresultaat is het beter om zoom 9 te gebruiken, wat de wereld opdeelt in 512x512 tiles.
+        
         int worldX = 64;
         int worldY = 42;
         SatelliteTile satelliteTile = new SatelliteTile(await tileDownloader.DownloadTile(worldX, worldY, 7));
